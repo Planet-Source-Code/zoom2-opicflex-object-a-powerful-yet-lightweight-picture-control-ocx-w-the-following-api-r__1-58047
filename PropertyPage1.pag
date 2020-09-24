@@ -1,0 +1,76 @@
+VERSION 5.00
+Begin VB.PropertyPage PropertyPage1 
+   Caption         =   "PropertyPage1"
+   ClientHeight    =   2220
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   4995
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   2220
+   ScaleWidth      =   4995
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   285
+      Index           =   1
+      Left            =   1620
+      TabIndex        =   4
+      Top             =   450
+      Width           =   1455
+   End
+   Begin VB.CommandButton Command1 
+      Caption         =   "Command1"
+      Height          =   285
+      Index           =   0
+      Left            =   135
+      TabIndex        =   3
+      Top             =   450
+      Width           =   1455
+   End
+   Begin VB.HScrollBar HScroll1 
+      Height          =   240
+      Left            =   -225
+      TabIndex        =   2
+      Top             =   1935
+      Width           =   5460
+   End
+   Begin VB.PictureBox Picture1 
+      Height          =   1185
+      Left            =   -45
+      ScaleHeight     =   1125
+      ScaleWidth      =   4950
+      TabIndex        =   0
+      Top             =   765
+      Width           =   5010
+      Begin VB.Frame Frame1 
+         Height          =   1185
+         Left            =   45
+         TabIndex        =   1
+         Top             =   -45
+         Width           =   4965
+         Begin VB.Image Image1 
+            Height          =   1050
+            Index           =   0
+            Left            =   45
+            Stretch         =   -1  'True
+            Top             =   90
+            Width           =   1050
+         End
+      End
+   End
+End
+Attribute VB_Name = "PropertyPage1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Image1_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single)
+  Dim lcnt As Long
+  
+  For lcnt = 0 To Image1.UBound
+    Image1(lcnt).BorderStyle = 0
+  Next lcnt
+  
+  Image1(Index).BorderStyle = 1
+End Sub
